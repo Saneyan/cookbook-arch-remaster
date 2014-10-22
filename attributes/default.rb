@@ -1,0 +1,1 @@
+default['remaster']['user'] = 'livecd'

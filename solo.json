@@ -1,0 +1,31 @@
+{
+  "remaster": {
+    "user": "gfunction",
+    "mirror_list": [
+      "http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch",
+      "http://ftp.tsukuba.wide.ad.jp/Linux/archlinux/$repo/os/$arch"
+    ]
+  },
+  "run_list": [
+    "recipe[remaster::default]",
+    "recipe[vim]",
+    "recipe[emacs]",
+    "recipe[git]",
+    "recipe[openssh]",
+    "recipe[sudo]",
+    "recipe[remaster::dotfiles]"
+  ],
+  "authorization": {
+    "sudo": {
+      "groups": ["wheel"],
+      "passwordless": "true"
+    }
+  },
+  "openssh": {
+    "service_name": "sshd",
+    "server": {
+      "permit_root_login": "no",
+      "password_authentication": "no"
+    }
+  }
+}
