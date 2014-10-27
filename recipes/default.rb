@@ -38,6 +38,10 @@ remaster_configs '/etc/vconsole.conf' do
   source    'vconsole.conf.erb'
 end
 
+execute 'setup_yaourt' do
+  command 'pacman -Syy && pacman -S yaourt'
+end
+
 service 'sshd' do
   supports :status => true, :restart => true, :reload => true
   action [ :enable, :start ]
