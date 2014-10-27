@@ -39,7 +39,7 @@ remaster_configs '/etc/vconsole.conf' do
 end
 
 execute 'setup_yaourt' do
-  command 'pacman -Syy && pacman -S yaourt'
+  command 'pacman -Syy --noconfirm && pacman -S --noconfirm yaourt'
 end
 
 service 'sshd' do

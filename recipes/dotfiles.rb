@@ -19,7 +19,7 @@ username = node[:remaster][:user]
     repository 'https://github.com/Saneyan/Dotfiles.git'
     revision   'master'
     action     :sync
-    notifies   :run, 'script[setup_dmgr]', :immediately
+    notifies   :run, 'script[setup_dmgr]'
   end
 
   script 'setup_dmgr' do
