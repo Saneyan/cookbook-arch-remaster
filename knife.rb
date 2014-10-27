@@ -1,0 +1,5 @@
+chef_server_url 'http://127.0.0.1:7863'
+node_name 'root'
+client_key '/cookbooks/.chef/dummy.pem'
+cookbook_path '/cookbooks'
+validation_key '/cookbooks/.chef/dummy.pem'
